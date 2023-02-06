@@ -1,0 +1,26 @@
+.header {
+	width: auto;
+	height: 100px;
+	background-color: grey;
+}
+
+.footer__conteiner {
+	width: auto;
+	height: 100px;
+	background-color: grey;
+}
+
+.container {
+	
+	width: 1140px;
+	height: auto;
+	margin: auto;
+}
+
+.galleryPreviewsContainer {
+	display: flex;
+	height: auto;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+}

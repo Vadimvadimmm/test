@@ -1,0 +1,48 @@
+.header {
+	width: auto;
+	height: 100px;
+	background-color: grey;
+}
+
+img {
+	width: 300px;
+	height: 300px;
+}
+
+.container {
+	width: 1140px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.image {
+ display: flex;
+ justify-content: space-around;
+}
+
+.block-1 {
+	width: auto;
+	height: 100px;
+	background-color: #fcb;
+}
+
+.footer {
+	width: auto;
+	height: 100px;
+	background-color: grey;
+}
+
+.fieldset__img {
+	display: flex;
+	justify-content: space-around;
+	height: auto;
+	flex-wrap: wrap;
+	
+}
+
+.footer__conteiner {
+	width: 1140px;
+	height: auto;
+	margin: 0 auto;
+}
+

@@ -1,0 +1,67 @@
+.basket {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.container {
+	width: 1170px;
+	margin: auto;
+	display: flex;
+	position: relative;
+}
+
+.text{
+	margin-left: 30px;
+
+}
+
+.menu{
+	min-width: 30px;
+	min-height: 30px;
+	margin-top: 123px;
+	border: solid 1px;
+	transition: height 2s;
+}
+
+.basket__container{
+	top: 0px;
+	right: 0px;
+	float: right;
+	z-index: 101;
+}
+
+.containerGood{
+	display: flex;
+}
+
+.good{
+	margin-right: 20px;
+}
+
+.numberOfGoods{
+	color: red;
+	z-index: 101;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.order{
+	display: flex;
+	justify-content: center;
+	background-color: #00bfff;
+	width: 150px;
+	height: 50px;
+}
+
+.cntrOdr{
+	display: flex;
+	margin: auto;
+	width: 300px;
+	height: 70px;
+}
+
+.gpOrdr{
+	margin: auto;
+}
