@@ -18,10 +18,11 @@
 
 .menu{
 	min-width: 30px;
-	min-height: 30px;
+	
 	margin-top: 123px;
 	border: solid 1px;
-	transition: height 2s;
+	animation: go-left-right 3s infinite alternate;
+	animation-delay: 5s;
 }
 
 .basket__container{
@@ -68,4 +69,5 @@
 
 a{
 	text-decoration: none;
+
 }

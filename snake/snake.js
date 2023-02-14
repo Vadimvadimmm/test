@@ -394,4 +394,4 @@ const game = {
 
 };
 
-game.init({ speed: 5 });
+game.init({ speed: 1 });
