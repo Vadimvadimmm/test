@@ -1,5 +1,21 @@
 "use strict";
 
+var rURL = 'data.json';
+var req = new XMLHttpRequest();
+req.open('GET', rURL);
+req.responseType = 'json';
+req.send();
+var header = document.querySelector('header');
+req.onload = function () {
+    var sH = req.response;
+    ph(sH);
+}
+function pH(jsonObj) {
+    var myH1 = document.createElement('h1');
+    myH1.textContent = jsonObj['number'];
+    header.appendChild(myH1);
+}
+
 const basket = {
  
     goods: [],
@@ -37,9 +53,18 @@ document.getElementById('basket').onclick = function () {
         menu.style.height = 0;
         document.getElementById("basket").appendChild(menu);
         
-        for (let h = 10; h < 200; h=h+0.0001) {
-            setTimeout(() => document.getElementById("menu").style = "height:" + h + "px", 1) ;
+        //for (let h = 10; h < 200; h = h + 0.0001)
+        let h = 0;
+        while (h < 200) {
+            if (h < 200) {
+                setTimeout(() => document.getElementById("menu").style = "height:" + h + "px", 1);
+                h = h + 0.1;
+                console.log(h);
+            } else {
+                return;
+            }
         }
+           
                
         let good = document.createElement('pre');
         good.className = "good";
@@ -92,6 +117,15 @@ document.querySelectorAll('.buyButton').forEach(el => {
         basket.prcGd = e.target.dataset.price;
         basket.gdNm = e.target.dataset.name;
         basket.qtt = e.target.dataset.quantity;
+
+        if (navigator.cookieEnabled === false) {
+            alert("Cookies отключены!");
+        }
+
+       
+        document.cookie = "name=user";
+        console.log(document.cookie);
+        alert(document.cookie);
 
         if (basket.goods.length > 0) {
             if (!document.getElementById('numberOfGoods')) {
