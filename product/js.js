@@ -1,18 +1,18 @@
-"use strict";
+//"use strict";
 
-var rURL = 'data.json';
-var req = new XMLHttpRequest();
+let rURL = 'data.json';
+let req = new XMLHttpRequest();
 req.open('GET', rURL);
 req.responseType = 'json';
 req.send();
-var header = document.querySelector('header');
+let header = document.querySelector('header');
 req.onload = function () {
-    var sH = req.response;
-    ph(sH);
+    let sH = req.response;
+    pH(sH);
 }
 function pH(jsonObj) {
-    var myH1 = document.createElement('h1');
-    myH1.textContent = jsonObj['number'];
+    let myH1 = document.createElement('h1');
+    myH1.textContent = jsonObj[0].number;
     header.appendChild(myH1);
 }
 
@@ -123,9 +123,8 @@ document.querySelectorAll('.buyButton').forEach(el => {
         }
 
        
-        document.cookie = "name=user";
-        console.log(document.cookie);
-        alert(document.cookie);
+        
+        
 
         if (basket.goods.length > 0) {
             if (!document.getElementById('numberOfGoods')) {
