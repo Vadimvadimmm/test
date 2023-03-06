@@ -5,22 +5,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
 	<title>покупка</title>
+	<style type="text/css">
+		ul{
+			margin: 0;
+		}
+	</style>
+	
 </head>
 <body>
-
+<div class="header" id="header"></div>
 	<div class="container" id="container">
 
-		<div class="product container__product">
-			<img src="image/1.jpg" alt="билет из России       ">
-			цена: 15 руб.
-			<button class="buyButton product__buyButton" data-price="15" data-name="билет из России" data-quantity="0" id="buyBtn">добавить в корзину</button>
-		</div>
+		
 
 		<div class="basket" id="basket">
 			<div class="basket__container">
-				<img class="basket__img" src="image/2.png" width="100" alt="корзина">
+				<img class="basket__img" id="bas" src="image/2.png" width="100" alt="корзина">
 				<div class="text basket__text">корзина</div>
+				<div id="asd" style="background-color: firebrick; width:200px; height:0px; display: flex; flex-wrap: wrap;"></div>
 			</div>	
+				
 		</div>
 		
 		
@@ -33,12 +37,14 @@
 			</div>
 		</a>
 	</div>
-		
+	
 
+	
 
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<script src="js.js"></script>
-	<script src="script.js"></script>
+
+
 
 </body>
 </html>

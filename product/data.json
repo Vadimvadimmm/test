@@ -1,7 +1,11 @@
-{
-  "user": [
-    { "number": "0" }
+ {
+  "goods": [
+    {"id": 1,"name": "билет на море","price": 255, "path": "image/1.jpg"},
+    {"id": 2,"name": "майка","price": 100, "path": "image/2.jpg"},
+    {"id": 3,"name": "кепка","price": 1390, "path": "image/3.jpg"},
+    {"id": 4,"name": "елка","price": 12, "path": "image/4.jpg"}
+  ],
+  "cart": [
+    {"id": 1,"name": "билет на море","price": 255, "quantity": 1}
   ]
-  
-
-}
+ }
