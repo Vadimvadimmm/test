@@ -1,5 +1,7 @@
 //"use strict";
 
+let cartUrl = 'cart.json';
+let goodUrl = 'data.json';
 let sumQtt = 0;
 let c = null;
 
@@ -84,7 +86,7 @@ function buildBascket (cart) {
             class: 'delete',
             'data-id': item.id,
             'data-quantity': item.quantity,
-            zIndex:1010,
+            
         });
         sQ += +item.quantity;
         sumQtt = sQ;
@@ -130,7 +132,7 @@ function sendRequest( url, callback ) {
 
 window.onload=function  () {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'cart.json');
+    xhr.open('GET', cartUrl);
     xhr.send();
 
     xhr.onreadystatechange = function () {
@@ -148,8 +150,8 @@ window.onload=function  () {
 
 
 
-sendRequest('data.json',buildGood);
-sendRequest('cart.json', getSumQtt);
+sendRequest(goodUrl,buildGood);
+sendRequest(cartUrl, getSumQtt);
 
 
 
@@ -165,7 +167,7 @@ let a = 0;
        if (a < 100) {
             a = a + 101;
             $('#asd').animate({ minHeight: 200, }, 1000);
-            sendRequest('cart.json', buildBascket);
+           sendRequest(cartUrl, buildBascket);
            
            
         } else {
@@ -200,7 +202,7 @@ $('body').on('click', '.buy', function () {
 
     let r = 0;
     for (let i = 0; i < c.cart.length; i++) {
-        r = r + 1;
+        r=r+1;
         if (c.cart[i].id == id) {
             c.cart[i].quantity = +c.cart[i].quantity + 1;
             r = r - 1;
@@ -211,7 +213,7 @@ $('body').on('click', '.buy', function () {
                 let p = document.querySelector('#cartP');
                 let parent1 = p.parentNode;
                 parent1.removeChild(p);
-                sendRequest('cart.json', buildBascket);
+                sendRequest(cartUrl, buildBascket);
             }
             break;
         }
@@ -235,7 +237,7 @@ $('body').on('click', '.buy', function () {
             let p = document.querySelector('#cartP');
             let parent1 = p.parentNode;
             parent1.removeChild(p);
-            sendRequest('cart.json', buildBascket);
+            sendRequest(cartUrl, buildBascket);
         }
     }
        
@@ -246,7 +248,7 @@ $('body').on('click', '.buy', function () {
     
         
         fetch('writer.php', {
-            method: 'POST',
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -258,7 +260,7 @@ $('body').on('click', '.buy', function () {
     
 
     
-    sendRequest('cart.json', getSumQtt);
+    sendRequest(cartUrl, getSumQtt);
 });
 
 
@@ -282,7 +284,7 @@ $('#asd').on('click', '.delete', function () {
                     let parent1 = p.parentNode;
                     parent1.removeChild(p);
                     fetch('writer.php', {
-                        method: 'POST',
+                        method: 'PATCH',
                         headers: {
                             'Content-Type': 'application/json'
                         },
@@ -290,7 +292,7 @@ $('#asd').on('click', '.delete', function () {
                             //данные рандомные, я бы отправлял всю корзину
                         )
                     })
-                    sendRequest('cart.json', buildBascket);
+                    sendRequest(cartUrl, buildBascket);
 
                 }
                 break;
@@ -306,7 +308,7 @@ $('#asd').on('click', '.delete', function () {
                     let parent1 = p.parentNode;
                     parent1.removeChild(p);
                     fetch('writer.php', {
-                        method: 'POST',
+                        method: 'PATCH',
                         headers: {
                             'Content-Type': 'application/json'
                         },
@@ -314,7 +316,7 @@ $('#asd').on('click', '.delete', function () {
                             //данные рандомные, я бы отправлял всю корзину
                         )
                     })
-                    sendRequest('cart.json', buildBascket);
+                    sendRequest(cartUrl, buildBascket);
                 }
             }
 
@@ -328,7 +330,7 @@ $('#asd').on('click', '.delete', function () {
         let parent = nOG.parentNode;
         parent.removeChild(nOG);
     }
-    sendRequest('cart.json', getSumQtt);
+    sendRequest(cartUrl, getSumQtt);
 
 
    
