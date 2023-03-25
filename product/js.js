@@ -248,7 +248,7 @@ $('body').on('click', '.buy', function () {
     
         
         fetch('writer.php', {
-            method: 'PATCH',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -284,7 +284,7 @@ $('#asd').on('click', '.delete', function () {
                     let parent1 = p.parentNode;
                     parent1.removeChild(p);
                     fetch('writer.php', {
-                        method: 'PATCH',
+                        method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'
                         },
@@ -308,7 +308,7 @@ $('#asd').on('click', '.delete', function () {
                     let parent1 = p.parentNode;
                     parent1.removeChild(p);
                     fetch('writer.php', {
-                        method: 'PATCH',
+                        method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'
                         },
